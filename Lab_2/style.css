@@ -40,95 +40,179 @@
   box-sizing: border-box;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-body, input, button, textarea {
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
+body,
+input,
+button,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
 }
 body {
   background-color: var(--body-color);
   color: var(--normal-font-size);
 }
-input, button, textarea {
-    border: none;
-    outline: none;
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
 }
-h1, h2, h3 {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
 }
 p {
-    line-height: 130%;
+  line-height: 130%;
 }
 ul {
-    list-style: none;
+  list-style: none;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 /* REUSABLE CSS CLASSES */
 .container {
-    max-width: 1120px;
-    margin-inline: 1.5rem;
+  max-width: 1120px;
+  margin-inline: 1.5rem;
 }
 .grid {
-    display: grid;
+  display: grid;
 }
 .section {
-    padding-block: 5rem 2rem;
+  padding-block: 5rem 2rem;
 }
 .section_title {
-    text-align: center;
-    font-size: var(--h1-font-size);
-    font-weight: var(--font-bold);
-    margin-bottom: 2rem;
+  text-align: center;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 2rem;
 }
 .main {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /*=============== HEADER & NAV ===============*/
 header {
-    background-color: transparent;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: var(--z-fixed);
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
 }
 .nav {
-    position: relative;
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .nav_logo {
-    background-color: red;
-    color: var(--title-color);
-    font-weight: var(--font-bold);
+  /* background-color: red; */
+  color: var(--title-color);
+  font-weight: var(--font-bold);
 }
-.nav_toggle, .nav_close {
-    /* background-color: red; */
-    font-size: 1.5rem;
-    color: var(--title-color);
-    cursor: pointer;
+.nav_toggle,
+.nav_close {
+  /* background-color: red; */
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
 }
 /* Navigation for mobile devices */
+
+/* Add blur header */
+.blur-header::after {
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(var(--hue), 70%, 4%, 0.2);
+  backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 /*=============== HOME ===============*/
 .home_container {
-    /* background-color: blue; */
-    row-gap: 2rem;
-    padding-top: 1rem;
+  /* background-color: blue; */
+  row-gap: 2rem;
+  padding-top: 1rem;
 }
 .home_img {
-    width: 220px;
-    justify-self: center;
-    mask-image: linear-gradient(to bottom, hsla(var(--hue), 40%, 16%) 60%, transparent 100%)
+  width: 220px;
+  justify-self: center;
+  mask-image: linear-gradient(
+    to bottom,
+    hsla(var(--hue), 40%, 16%) 60%,
+    transparent 100%
+  );
+}
+.home_name {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  word-break: break-word;
+  margin-bottom: 1rem;
+}
+.home_profession {
+  position: relative;
+  font-size: var(--big-font-size);
+  color: var(--text-color);
+}
+.home_profession::after {
+  background-color: var(--text-color);
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  /* 25% so với cái gì */
+  width: 25%;
+  height: 3px;
+}
+.home_scroll {
+  color: var(--title-color);
+  display: inline-flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  justify-self: center;
+  margin-top: 3rem;
+}
+.home_scroll-box {
+  background-color: var(--first-color);
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+.home_scroll-text {
+  font-weight: var(--font-semi-bold);
+}
+.home_scroll-box i {
+  animation: scroll-down 3s infinite;
+}
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0.6rem);
+    opacity: 0;
+  }
 }
