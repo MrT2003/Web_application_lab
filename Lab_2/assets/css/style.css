@@ -131,6 +131,19 @@ header {
 /* Navigation for mobile devices */
 
 /* Add blur header */
+/* Button */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 2rem;
+  transition: background-color 0.4s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
 /* not work */
 .blur-header::after {
   content: "";
@@ -256,7 +269,7 @@ header {
 
 /* <!--==================== INFO ====================--> */
 .info_container {
-  background-color: red;
+  /* background-color: red; */
   row-gap: 3rem;
 }
 .info_title {
@@ -281,6 +294,9 @@ header {
 .about_description {
   margin-bottom: 2rem;
 }
+.about_description b {
+  color: var(--first-color-light);
+}
 .about_img {
   width: 250px;
   justify-self: center;
@@ -290,3 +306,236 @@ header {
     transparent 100%
   );
 }
+.about_button {
+  width: 100%;
+}
+
+/* Experience */
+.experience_content {
+  /* background-color: red; */
+  row-gap: 2rem;
+}
+.experience_data {
+  /* background-color: red; */
+  row-gap: 1rem;
+}
+.experience_company {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+}
+.experience_profestion {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.25rem;
+}
+.experience_date {
+  /* background-color: red; */
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 0.75rem;
+}
+/* Skills */
+.skills_img {
+  width: 35px;
+  margin-bottom: 0.5rem;
+}
+.skills_name {
+  font-size: var(--small-font-size);
+}
+.skills_content {
+  grid-template-columns: repeat(3, max-content);
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.skills_box {
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s;
+}
+.skills_box:hover {
+  transform: translateY(-0.25rem);
+}
+/* <!--==================== SERVICES ====================--> */
+.services {
+  background-color: var(--container-color);
+}
+.services_container {
+  row-gap: 2rem;
+}
+.services_icon {
+  display: block;
+  color: var(--first-color-light);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.services_title {
+  /* color: red; */
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.75rem;
+}
+/* <!--==================== CONTACT ====================--> */
+.contact {
+  row-gap: 4rem;
+}
+.contact_form,
+.contact_group {
+  /* color: red; */
+  gap: 1rem;
+}
+.contact_form {
+  /* background-color: red; */
+  position: relative;
+}
+.contact_input {
+  background-color: var(--container-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem;
+}
+.contact_input::placeholder {
+  color: var(--text-color-light);
+}
+.contact_area {
+  height: 10rem;
+  resize: none;
+}
+.contact_button {
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.contact_social {
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  column-gap: 3rem;
+}
+.contact_social_link {
+  color: var(--title-color);
+  display: inline-flex;
+  column-gap: 0.25rem;
+  align-items: center;
+  transition: color 0.4s;
+}
+.contact_social_link i {
+  font-size: 1.5rem;
+}
+.contact_social_link span {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.contact_social_link:hover {
+  color: var(--first-color-light);
+}
+.contact_message {
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+/* <!--==================== FOOTER ====================--> */
+.footer {
+  background-color: var(--container-color);
+}
+.footer_container {
+  padding-block: 3rem 2rem;
+  row-gap: 3rem;
+}
+.footer_links {
+  display: flex;
+  justify-content: center;
+  column-gap: 2.5rem;
+}
+.footer_link {
+  color: var(--font-semi-bold);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+.footer_link:hover {
+  color: var(--first-color-light);
+}
+.footer_copy {
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 300px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .skills_content {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 540px) {
+  .home_container,
+  .work_container,
+  .info_container,
+  .services_container,
+  .contact_container {
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    /* background-color: red; */
+    margin-inline: auto;
+  }
+  .section {
+    /* background-color: red; */
+    padding-block: 7rem 5rem;
+  }
+  .section_title {
+    /* background-color: red; */
+    margin-bottom: 4rem;
+  }
+  .nav {
+    background-color: red;
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav_toggle,
+  .nav_close {
+    display: none;
+  }
+  .nav_menu {
+    width: initial;
+  }
+  .nav_list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .home_container {
+    grid-template-columns: 375px 350px;
+    gap: 3rem 16rem;
+  }
+  .home_name {
+    /* background-color: red; */
+    margin-bottom: 1.5rem;
+  }
+  .home_profession::after {
+    bottom: -1rem;
+    width: 35%;
+  }
+
+  .work_container {
+    grid-template-columns: repeat(2, 540px);
+    gap: 2.5rem ;
+  }
+  .work_link {
+    padding: 3rem 3rem 2rem;
+  }
+  .work_title {
+    font-size: var(--h2-font-size);
+    margin-bottom: 1rem;
+  }
+
+}
+
+
