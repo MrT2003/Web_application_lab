@@ -131,8 +131,9 @@ header {
 /* Navigation for mobile devices */
 
 /* Add blur header */
+/* not work */
 .blur-header::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 1000%;
   height: 100%;
@@ -215,4 +216,77 @@ header {
     transform: translateY(0.6rem);
     opacity: 0;
   }
+}
+/* <!--==================== WORKS ====================--> */
+.work {
+  background-color: var(--container-color);
+}
+.work_card {
+  background-color: var(--first-color);
+}
+.work_link {
+  display: block;
+  position: relative;
+  background-color: var(--body-color);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  color: var(--text-color);
+  transition: transform 0.4s;
+}
+.work_title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.75rem;
+}
+.work_description {
+  margin-bottom: 1.5rem;
+}
+.work_link i {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color-light);
+  transition: transform 0.4s;
+}
+.work_link:hover {
+  transform: translateY(-0.35rem);
+}
+.work_link i:hover {
+  transform: translateX(0.5rem);
+}
+
+/* <!--==================== INFO ====================--> */
+.info_container {
+  background-color: red;
+  row-gap: 3rem;
+}
+.info_title {
+  position: relative;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+.info_title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  height: 2px;
+  width: 20px;
+  background-color: var(--text-color);
+}
+/* about */
+.about {
+  row-gap: 3rem;
+}
+.about_description {
+  margin-bottom: 2rem;
+}
+.about_img {
+  width: 250px;
+  justify-self: center;
+  mask-image: linear-gradient(
+    to bottom,
+    hsla(var(--hue), 40%, 16%) 60%,
+    transparent 100%
+  );
 }
