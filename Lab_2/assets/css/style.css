@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
 
+/*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
-  /* Colors */
+  /*========== Colors ==========*/
   --hue: 230;
   --first-color: hsl(var(--hue), 55%, 55%);
   --first-color-light: hsl(var(--hue), 55%, 65%);
@@ -13,7 +14,7 @@
   --body-color: hsl(var(--hue), 40%, 16%);
   --container-color: hsl(var(--hue), 40%, 20%);
 
-  /* Font and typography */
+  /*========== Font and typography ==========*/
   --body-font: "Syne", sans-serif;
   --biggest-font-size: 3rem;
   --big-font-size: 1.5rem;
@@ -23,17 +24,30 @@
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
 
-  /* Font weight */
+  /*========== Font weight ==========*/
   --font-regular: 400;
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  /* z index */
+  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-/* Base */
+/*========== Responsive typography==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 5.5rem;
+    --big-font-size: 2.75rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1.125rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
 * {
   margin: 0;
   padding: 0;
@@ -51,7 +65,7 @@ textarea {
 }
 body {
   background-color: var(--body-color);
-  color: var(--normal-font-size);
+  color: var(--text-color);
 }
 input,
 button,
@@ -79,13 +93,15 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* REUSABLE CSS CLASSES */
+
+/*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
 }
 .grid {
   display: grid;
+  gap: 1.5rem;
 }
 .section {
   padding-block: 5rem 2rem;
@@ -117,18 +133,65 @@ header {
   align-items: center;
 }
 .nav_logo {
-  /* background-color: red; */
   color: var(--title-color);
   font-weight: var(--font-bold);
 }
 .nav_toggle,
 .nav_close {
-  /* background-color: red; */
   font-size: 1.5rem;
   color: var(--title-color);
   cursor: pointer;
 }
 /* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav_menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(var(--hue), 70%, 4%, 0.2);
+    backdrop-filter: blur(16px);
+    width: 80%;
+    height: 100%;
+    padding: 7rem 3rem;
+    transition: right 0.4s;
+  }
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+  .nav_link {
+    position: relative;
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+  }
+  .nav_link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--first-color-light);
+
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    transition: width 0.3s;
+  }
+  .nav_link:hover {
+    color: var(--first-color-light);
+  }
+  .nav_link:hover::after {
+    width: 30%;
+  }
+
+  .nav_close {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    /* Tự thêm vào */
+    padding: 1rem;
+  }
+}
 
 /* Add blur header */
 /* Button */
@@ -159,7 +222,6 @@ header {
 
 /*=============== HOME ===============*/
 .home_container {
-  /* background-color: blue; */
   row-gap: 2rem;
   padding-top: 1rem;
 }
@@ -179,9 +241,11 @@ header {
   margin-bottom: 1rem;
 }
 .home_profession {
+  /* Dùng relative ở đây là để tạo border-bottom */
   position: relative;
   font-size: var(--big-font-size);
   color: var(--text-color);
+  /* background-color: red; */
 }
 .home_profession::after {
   background-color: var(--text-color);
@@ -205,8 +269,10 @@ header {
   background-color: var(--first-color);
   width: 32px;
   height: 32px;
+
   display: grid;
   place-items: center;
+
   font-size: 1.5rem;
   overflow: hidden;
 }
@@ -263,7 +329,7 @@ header {
 .work_link:hover {
   transform: translateY(-0.35rem);
 }
-.work_link i:hover {
+.work_link:hover i {
   transform: translateX(0.5rem);
 }
 
@@ -485,19 +551,15 @@ header {
 /* For large devices */
 @media screen and (min-width: 1150px) {
   .container {
-    /* background-color: red; */
     margin-inline: auto;
   }
   .section {
-    /* background-color: red; */
     padding-block: 7rem 5rem;
   }
   .section_title {
-    /* background-color: red; */
     margin-bottom: 4rem;
   }
   .nav {
-    background-color: red;
     height: calc(var(--header-height) + 2rem);
   }
   .nav_toggle,
@@ -516,7 +578,6 @@ header {
     gap: 3rem 16rem;
   }
   .home_name {
-    /* background-color: red; */
     margin-bottom: 1.5rem;
   }
   .home_profession::after {
@@ -526,7 +587,7 @@ header {
 
   .work_container {
     grid-template-columns: repeat(2, 540px);
-    gap: 2.5rem ;
+    gap: 2.5rem;
   }
   .work_link {
     padding: 3rem 3rem 2rem;
@@ -580,8 +641,8 @@ header {
   }
 
   .skills_content {
-    grid-template-columns:  repeat(6, max-content);
-    gap: 6rem, 13rem;   
+    grid-template-columns: repeat(6, max-content);
+    gap: 6rem, 13rem;
   }
 
   .services_icon {
@@ -600,7 +661,7 @@ header {
   }
   .contact_button {
     width: max-content;
-    justify-self:  center;
+    justify-self: center;
     margin-top: 1.5rem;
   }
   .contact_message {
@@ -621,5 +682,3 @@ header {
     order: 1;
   }
 }
-
-
