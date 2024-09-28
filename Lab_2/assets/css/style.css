@@ -194,19 +194,9 @@ header {
 }
 
 /* Add blur header */
-/* Button */
-.button {
-  display: inline-flex;
-  justify-content: center;
-  background-color: var(--first-color);
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-  padding: 1.25rem 2rem;
-  transition: background-color 0.4s;
-}
-.button:hover {
-  background-color: var(--first-color-alt);
-}
+
+
+
 /* not work */
 .blur-header::after {
   content: "";
@@ -296,7 +286,22 @@ header {
     opacity: 0;
   }
 }
-/* <!--==================== WORKS ====================--> */
+
+/* BUTTON */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 2rem;
+  transition: background-color 0.4s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+/*=============== WORKS ===============*/
 .work {
   background-color: var(--container-color);
 }
@@ -331,11 +336,10 @@ header {
 }
 .work_link:hover i {
   transform: translateX(0.5rem);
-}
+}  
 
-/* <!--==================== INFO ====================--> */
+/*=============== INFO ===============*/
 .info_container {
-  /* background-color: red; */
   row-gap: 3rem;
 }
 .info_title {
@@ -378,7 +382,6 @@ header {
 
 /* Experience */
 .experience_content {
-  /* background-color: red; */
   row-gap: 2rem;
 }
 .experience_data {
@@ -389,16 +392,16 @@ header {
   font-size: var(--h2-font-size);
   font-weight: var(--font-bold);
 }
-.experience_profestion {
+.experience_profession {
   font-size: var(--h3-font-size);
   margin-bottom: 0.25rem;
 }
 .experience_date {
-  /* background-color: red; */
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: 0.75rem;
 }
+
 /* Skills */
 .skills_img {
   width: 35px;
@@ -420,7 +423,8 @@ header {
 .skills_box:hover {
   transform: translateY(-0.25rem);
 }
-/* <!--==================== SERVICES ====================--> */
+
+/*=============== SERVICES ===============*/
 .services {
   background-color: var(--container-color);
 }
@@ -434,21 +438,18 @@ header {
   margin-bottom: 1rem;
 }
 .services_title {
-  /* color: red; */
   font-size: var(--h3-font-size);
   margin-bottom: 0.75rem;
 }
 /* <!--==================== CONTACT ====================--> */
-.contact {
+.contact_container {
   row-gap: 4rem;
 }
 .contact_form,
 .contact_group {
-  /* color: red; */
   gap: 1rem;
 }
 .contact_form {
-  /* background-color: red; */
   position: relative;
 }
 .contact_input {
@@ -526,6 +527,7 @@ header {
 }
 
 /*=============== BREAKPOINTS ===============*/
+
 /* For small devices */
 @media screen and (max-width: 300px) {
   .container {
@@ -545,6 +547,56 @@ header {
   .contact_container {
     grid-template-columns: 350px;
     justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* .nav_toggle,
+  .nav_close {
+    display: none;
+  } */
+  .nav_menu {
+    width: 50%;
+  }
+  .home_container {
+    grid-template-columns: repeat(2, 350px);
+  }
+  .home_data {
+    align-self: flex-end;
+    padding-bottom: 3rem;
+    order: -1;
+  }
+  .home_scroll {
+    grid-column: 1 / 3;
+  }
+
+  .work_container {
+    grid-template-columns: repeat(2, 350px);
+  }
+
+  .info_container {
+    grid-template-columns: initial;
+  }
+
+  .about {
+    grid-template-columns: repeat(2, 350px);
+    align-items: center;
+  }
+  .about_content {
+    order: 1;
+  }
+  .experience_data {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills_content {
+    grid-template-columns: repeat(5, max-content);
+    justify-content: initial;
+    column-gap: 4rem;
+  }
+
+  .services_container {
+    grid-template-columns: repeat(2, 320px);
   }
 }
 
@@ -570,8 +622,32 @@ header {
     width: initial;
   }
   .nav_list {
+    display: flex;
     flex-direction: row;
     column-gap: 4rem;
+  }
+  .nav_link {
+    position: relative;
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+  }
+  .nav_link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--first-color-light);
+
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    transition: width 0.3s;
+  }
+  .nav_link:hover {
+    color: var(--first-color-light);
+  }
+  .nav_link:hover::after {
+    width: 30%;
   }
   .home_container {
     grid-template-columns: 375px 350px;

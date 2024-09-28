@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Info - Minh Trieu (Alex)</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/Lab_2/assets/css/style.css" />
   </head>
   <body>
     <header></header>
     <main>
       <!--==================== INFO ====================-->
       <section class="info section" id="info">
-        <h2>MY INFO</h2>
+        <h2 class="section_title">MY INFO</h2>
+
         <div class="info_container container grid">
           <!-- About -->
           <div class="about grid">
@@ -23,7 +27,7 @@
                 completed.
               </p>
               <a
-                href="./assets/pdf/Tailor-Cv.pdf"
+                href="/Lab_2/assets/pdf/Tailor-Cv.pdf"
                 download=""
                 target="_blank"
                 class="button about_button"
@@ -31,11 +35,12 @@
               >
             </div>
             <img
-              src="./assets/images/harry_potter.png"
+              src="/Lab_2/assets/images/harry_potter.png"
               alt="image"
               class="about_img"
             />
           </div>
+
           <!-- Experience -->
           <div class="experience">
             <h3 class="info_title">Experiences</h3>
@@ -45,8 +50,32 @@
                 <h2 class="experience_company">Discord</h2>
 
                 <div>
-                  <h3 class="experience_profestion">Web Product Designer</h3>
+                  <h3 class="experience_profession">Web Product Designer</h3>
                   <span class="experience_date">05/23 - Present</span>
+                  <p class="experience_description">
+                    Short description of the work you do or did in the company.
+                  </p>
+                </div>
+              </div>
+
+              <div class="experience_data grid">
+                <h2 class="experience_company">Google</h2>
+
+                <div>
+                  <h3 class="experience_profestion">Web Developer</h3>
+                  <span class="experience_date">05/21 - 2/22</span>
+                  <p class="experience_description">
+                    Short description of the work you do or did in the company.
+                  </p>
+                </div>
+              </div>
+
+              <div class="experience_data grid">
+                <h2 class="experience_company">Adobe</h2>
+
+                <div>
+                  <h3 class="experience_profestion">Web Designer</h3>
+                  <span class="experience_date">01/20 - 03/21</span>
                   <p class="experience_description">
                     Short description of the work you do or did in the company.
                   </p>
@@ -55,105 +84,98 @@
             </div>
           </div>
 
-          <div class="experience_content grid">
-            <div class="experience_data grid">
-              <h2 class="experience_company">Google</h2>
+          <!-- Skills -->
+          <div class="skills">
+            <h3 class="info_title">Skills</h3>
 
-              <div>
-                <h3 class="experience_profestion">Web Developer</h3>
-                <span class="experience_date">05/21 - 2/22</span>
-                <p class="experience_description">
-                  Short description of the work you do or did in the company.
-                </p>
+            <div class="skills_content grid">
+              <div class="skills_box">
+                <img
+                  src="/Lab_2/assets/images/info-html.svg"
+                  alt="image"
+                  class="skills_img"
+                />
+                <span class="skills_name">HTML</span>
               </div>
-            </div>
-          </div>
 
-          <div class="experience_content grid">
-            <div class="experience_data grid">
-              <h2 class="experience_company">Adobe</h2>
-
-              <div>
-                <h3 class="experience_profestion">Web Designer</h3>
-                <span class="experience_date">01/20 - 03/21</span>
-                <p class="experience_description">
-                  Short description of the work you do or did in the company.
-                </p>
+              <div class="skills_box">
+                <img
+                  src="/Lab_2/assets/images/info-css.svg"
+                  alt="image"
+                  class="skills_img"
+                />
+                <span class="skills_name">CSS</span>
               </div>
-            </div>
-          </div>
-        </div>
-        <!-- Skills -->
-        <div class="skills">
-          <h3 class="skill_title">Skills</h3>
 
-          <div class="skills_content grid">
-            <div class="skills_box">
-              <img
-                src="./assets/images/info-html.svg"
-                alt="image"
-                class="skills_img"
-              />
-              <span class="skills_name">HTML</span>
-            </div>
+              <div class="skills_box">
+                <img
+                  src="/Lab_2/assets/images/info-javascript.svg"
+                  alt="image"
+                  class="skills_img"
+                />
+                <span class="skills_name">JS</span>
+              </div>
 
-            <div class="skills_box">
-              <img
-                src="./assets/images/info-css.svg"
-                alt="image"
-                class="skills_img"
-              />
-              <span class="skills_name">CSS</span>
-            </div>
+              <div class="skills_box">
+                <img
+                  src="/Lab_2/assets/images/info-react.svg"
+                  alt="image"
+                  class="skills_img"
+                />
+                <span class="skills_name">React Native</span>
+              </div>
 
-            <div class="skills_box">
-              <img
-                src="./assets/images/info-javascript.svg"
-                alt="image"
-                class="skills_img"
-              />
-              <span class="skills_name">JS</span>
-            </div>
+              <div class="skills_box">
+                <img
+                  src="/Lab_2/assets/images/info-git.svg"
+                  alt="image"
+                  class="skills_img"
+                />
+                <span class="skills_name">Git</span>
+              </div>
 
-            <div class="skills_box">
-              <img
-                src="./assets/images/info-react.svg"
-                alt="image"
-                class="skills_img"
-              />
-              <span class="skills_name">React Native</span>
-            </div>
+              <div class="skills_box">
+                <img
+                  src="/Lab_2/assets/images/info-github.svg"
+                  alt="image"
+                  class="skills_img"
+                />
+                <span class="skills_name">Github</span>
+              </div>
 
-            <div class="skills_box">
-              <img
-                src="./assets/images/info-git.svg"
-                alt="image"
-                class="skills_img"
-              />
-              <span class="skills_name">Git</span>
-            </div>
-
-            <div class="skills_box">
-              <img
-                src="./assets/images/info-github.svg"
-                alt="image"
-                class="skills_img"
-              />
-              <span class="skills_name">Github</span>
-            </div>
-
-            <div class="skills_box">
-              <img
-                src="./assets/images/info-sass.svg"
-                alt="image"
-                class="skills_img"
-              />
-              <span class="skills_name">Sass</span>
+              <div class="skills_box">
+                <img
+                  src="/Lab_2/assets/images/info-sass.svg"
+                  class="skills_img"
+                />
+                <span class="skills_name">Sass</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer_container container grid">
+        <ul class="footer_links">
+          <li>
+            <a href="index.html" class="footer_link">Home</a>
+          </li>
+
+          <li>
+            <a href="./html/work.html" class="footer_link">Work</a>
+          </li>
+
+          <li>
+            <a href="./html/info.html" class="footer_link">Info</a>
+          </li>
+        </ul>
+
+        <span class="footer_copy">
+          &#169; All Rights Reserved By Minh Trieu
+        </span>
+      </div>
+    </footer>
   </body>
 </html>
