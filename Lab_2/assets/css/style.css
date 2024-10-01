@@ -308,7 +308,7 @@ header {
     hsla(var(--hue), 40%, 16%) 60%,
     transparent 100%
   );
-}
+} 
 .about_button {
   width: 100%;
 }
@@ -598,7 +598,6 @@ header {
   .work_container {
     grid-template-columns: repeat(2, 540px);
     gap: 2.5rem;
-    margin-bottom: 50px;
   }
   .work_link {
     padding: 3rem 3rem 2rem;
@@ -683,13 +682,6 @@ header {
     column-gap: 5rem;
   }
 
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-/* 
-    width: 100%; */
-  }
   .footer_container {
     padding-block: 3rem;
     grid-template-columns: repeat(2, max-content);
