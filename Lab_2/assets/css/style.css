@@ -66,8 +66,6 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
-  /* max-height: 100vh;
-  height: 100%; */
 }
 input,
 button,
