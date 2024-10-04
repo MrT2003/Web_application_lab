@@ -12,74 +12,9 @@
 }
 
 body, html {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     color: black;
     font-family: "Caveat", cursive;
-}
-/* 
-.header {
-    background-color: aqua;
-}
-.header_container {
-    width: 100vw;
-    height: 100vh;
-    padding: 25px;
-}
-.header_top {
-    margin: 0s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-.logo_name {
-    display: flex;
-    align-items: center;
-}
-.logo_name i {
-    font-size: 2rem;
-    margin-right: 1rem;
-}
-.header_items {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-}
-.header_item a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding-right: 14px;
-    text-decoration: none;
-    font-size: 2rem;
-}
-.header_item a:hover {
-    color: red;
-    cursor: pointer;
-}
-.main_topics {
-    height: 80%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(2rem);
-    overflow: hidden;
-}
-.name_position {
-    color: red;
-    font-size: 5rem;
-    font-weight: 700;
-}
-.main_topics p {
-    font-size: 2rem;
-    font-weight: 400;
-} */
-.header {
-    border: 1px solid red;
 }
 .header_container {
     display: flex;
@@ -149,7 +84,6 @@ body, html {
 }
 .work_top {
     background-color: #e9ecef;
-    border: 1px solid black;
     padding: 10px 10px;
     font-size: 1rem;
     color: black;
@@ -239,5 +173,104 @@ body, html {
 /* break point  */
 /* For large devices */
 @media screen and (min-width: 1150px) {
-    
+    .header {
+        height: 20rem;
+        padding: 0 20px;
+        margin: 0;
+    }
+    .header_top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_item {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .main_topics {
+        margin-top: 4rem;
+    }
+    .name_position {
+        font-size: 4rem;
+    }
+    .main_topics p {
+        color: grey;
+        color: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr;
+        height: 30rem;
+    }
+    .grid_item {
+        border: 1px solid black;
+    }
+    .project_part {
+    }
+    .project_part h4 {
+        border: none;
+    }
+    .project_list .project_item {
+        background-color: white;
+    }
+    .project_list .project_item:first-of-type {
+        border: none;
+    }
+    /* Work experience */
+    .work_part .work_title {
+        border: none;
+        text-align: left;
+    }
+    .work_top {
+        background-color: white;
+    }
+    .work_bottom {
+        background-color: white;
+    }
+    /* Education */
+    .education_part h4 {
+        text-align: start;
+        font-size: 2rem;
+    }
+    .education_part p {
+        text-align: start;
+        font-size: 1.5rem;
+    }
+    .education_part p:last-of-type {
+        margin-bottom: 1rem;
+    }
+    .course_items {
+        font-size: 1rem;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; 
+        margin-left: 2rem;
+    }
+
+    .footer_container {
+        text-align: left;
+        margin-bottom: 20rem;
+        border: none;
+    }
+    .footer_title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 2rem 1rem;
+        margin-left: 10rem;
+    }
+    .footer_info .author_info {
+        width: 20%;
+        margin-right: 30px;
+    }
+    .footer_info .author_info:nth-child(n+2) {
+        display: block;
+    } 
+    .footer_copyright {
+        text-align: center;
+        margin-top: 10rem;
+    }
+
 }
