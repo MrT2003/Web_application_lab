@@ -82,10 +82,9 @@ body, html {
     padding: 10px;
     border: 1px solid black;
 }
-.work_top {
+.work_part .work_top {
     background-color: #e9ecef;
     padding: 10px 10px;
-    font-size: 1rem;
     color: black;
     text-align: left;
 }
@@ -94,7 +93,7 @@ body, html {
 }
 .work_bottom {
     background-color: #e9ecef;
-    border: 1px solid black;
+    border-top: 1px solid black;
     padding: 10px 10px;
     font-size: 1rem;
     color: black;
@@ -207,28 +206,71 @@ body, html {
     .grid_item {
         border: 1px solid black;
     }
-    .project_part {
+
+    /* Project */
+    .main_container .project_part {
+        text-align: left;
     }
+
     .project_part h4 {
         border: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-left: 1rem;
     }
     .project_list .project_item {
         background-color: white;
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 1.5rem 0;
+        font-size: 1rem;
+        font-weight: 500;
+        padding-left: 1rem;
+
     }
-    .project_list .project_item:first-of-type {
+    .project_list .project_item:last-of-type {
         border: none;
     }
+    .project_list .project_item:first-of-type {
+        margin: 0;
+    }
+
     /* Work experience */
     .work_part .work_title {
         border: none;
         text-align: left;
     }
-    .work_top {
+    .work_part .work_top {
+        padding: 10px 10px;
+        font-size: 1rem;
+        color: black;
+        text-align: left;
+        margin-bottom: 5rem;
         background-color: white;
+    }
+    .work_top p {
+        font-size: 1.5rem;
+    }
+    .work_top p:last-of-type {
+        margin-bottom: 1rem;
+
+    }
+    .work_top a {
+        margin-top: 2rem;
+        text-decoration: none;
     }
     .work_bottom {
         background-color: white;
     }
+    .work_bottom h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .work_bottom p {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
     /* Education */
     .education_part h4 {
         text-align: start;
