@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: "Caveat", cursive;
+    height: 100vh;
+    width: 100vw;
+}
+.header .header_items {
+    list-style-type: none;
+}
+.collapse .nav-item {
+    list-style-type: none;
+}
+.navbar-nav li {
+    list-style-type: square;
+    margin-left: 50px;
+}
+.author_info {
+    border-radius: 20px;
+}
+.footer_copyright {
+    margin-top: 10rem;
+}
+.project_list li {
+    list-style-type: none;
+}
+.col a {
+    text-decoration: none;
+}
+.main_topics {
+    /* padding-top: 14rem; */
+}
+@media screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+    }
+    /* Header */
+    .header {
+        text-align: center;
+    }
+    .header .logo_name {
+        width: 100%;
+        flex-direction: column;
+    }
+    .header .logo_name span {
+        display: block;
+    }
+
+    .header ul li {
+        list-style-type: none;
+    }
+    .header_top {
+        background-color: red;
+        
+    }
+    .header_bottom {
+        order: 0;
+    }
+
+    /* Project */
+    .project_list, .project_title {
+        text-align: center;
+    }
+    .project_title {
+        padding-bottom: 1rem;
+    }
+    .project_item {
+        background-color: #e9ecef;
+    }
+    .project_item:first-of-type {
+        border-top: 1px solid black;
+    }
+
+    /* Experience */
+    .work_title {
+        text-align: center;
+        border-bottom: 1px solid black;
+        padding-bottom: 1.5rem;
+    }
+    .work_top {
+        margin: 0;
+        padding-top: 1rem;
+    }
+    .work_bottom {
+        padding-bottom: 1rem;
+    }
+    .work_top, .work_bottom {
+        background-color: #e9ecef;
+    }
+
+    /* Footer */
+    .author_info:nth-child(n+2) {
+        display: none;
+    }
+}
+
