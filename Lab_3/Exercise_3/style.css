@@ -1,318 +1,347 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
-/*========== Font and typography ==========*/
-/*========== Font weight ==========*/
-/*========== z index ==========*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(0, 0%, 0%);
+  --first-color-light: hsl(0, 0%, 100%);
+  --first-color-alt: hsl(210, 16%, 93%);
+  --title-color: hsl(0, 0%, 50%);
+
+  --text-color: hsl(var(--hue), 20%, 80%);
+  --text-color-light: hsl(var(--hue), 20%, 70%);
+  --body-color: hsl(var(--hue), 40%, 16%);
+  --container-color: hsl(var(--hue), 40%, 20%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Caveat", cursive;
+  --biggest-font-size: 3rem;
+  --big-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 500;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
 /*=============== BASE ===============*/
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    /* background-color: antiquewhite; */
-    color: black;
-    font-family: "Caveat", cursive;
+body,
+html {
+  color: var(--first-color);
+  font-family: "Caveat", cursive;
+  border: 1px solid black;
 }
+/*=============== HEADER===============*/
 .header_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-    margin: 1rem auto;
+  margin: 1rem auto;
 }
 .header_items {
-    list-style-type: none;
-    display: inline-flex;
+  list-style-type: none;
+  display: inline-flex;
 }
 .header_item {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 .header_item a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: var(--first-color);
 }
 .title_name {
-    /* background-color: red; */
-    margin: 10px auto;
+  margin: 10px auto;
 }
 
-/* main */
+/*=============== MAIN ===============*/
 .project_part:first-of-type {
-    background-color: white;
-    border-radius: black;
-    width: 100%;
-    text-align: center;
+  background-color: var(--first-color-light);
+  /* border-radius: black; */
+  width: 100%;
+  text-align: center;
 }
 .project_part h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    margin: auto;
-    padding: 10px;
-    border: 1px solid black;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2rem;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
 }
 .project_list {
-    list-style: none;
+  list-style: none;
 }
 .project_list .project_item {
-    background-color: #e9ecef;
-    border: 1px solid black;
-    margin: 0;
-    padding: 10px;
-    font-size: 1rem;
-    color: black;
+  background-color: var(--first-color-alt);
+  border: 1px solid black;
+  margin: 0;
+  padding: 10px;
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
 }
 /* work_part */
 .work_part {
-    background-color: white;
-    border-radius: black;
-    width: 100%;
-    text-align: center;
+  background-color: var(--first-color-light);
+  border-radius: black;
+  width: 100%;
+  text-align: center;
 }
 .work_part .work_title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    margin: auto;
-    padding: 10px;
-    border: 1px solid black;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2rem;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
 }
 .work_part .work_top {
-    background-color: #e9ecef;
-    padding: 10px 10px;
-    color: black;
-    text-align: left;
+  background-color: var(--first-color-alt);
+  padding: 10px 10px;
+  color: var(--first-color);
+  text-align: left;
 }
 .work_top a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .work_bottom {
-    background-color: #e9ecef;
-    border-top: 1px solid black;
-    padding: 10px 10px;
-    font-size: 1rem;
-    color: black;
-    text-align: left;
+  background-color: var(--first-color-alt);
+  border-top: 1px solid black;
+  padding: 10px 10px;
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  text-align: left;
 }
 .work_bottom a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* education_part */
 .education_part {
-    background-color: white;
-    border-radius: black;
-    width: 100%;
-    text-align: center;
-    border: 1px solid black;
-    padding: 10px;
+  background-color: var(--first-color-light);
+  border-radius: black;
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
 }
 .education_part h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 15px;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 15px;
 }
-.education_part p, .course_items {
-    text-align: left;
-    overflow: wrap;
-    margin-bottom: 2px;
+.education_part p,
+.course_items {
+  text-align: left;
+  overflow: wrap;
+  margin-bottom: 2px;
 }
 .course_items {
-    padding-left: 20px;
+  padding-left: 20px;
 }
-/* Footer */
+
+/*=============== FOOTER ===============*/
 .footer_container {
-    background-color: white;
-    border-radius: black;
-    width: 100%;
-    text-align: center;
-    border: 1px solid black;
-    padding: 10px;
-}   
+  background-color: var(--first-color-light);
+  border-radius: black;
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+}
 .footer_container .footer_title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 15px;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 15px;
 }
 .footer_info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    /* width: 20%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* width: 20%; */
 }
-.footer_info .author_info{
-    width: 70%;
-    border: 2px solid black;
-    margin-right: 1rem;
-    border-radius: 30px;
-    padding: 15px 20px;
-    text-align: left;
+.footer_info .author_info {
+  width: 70%;
+  border: 2px solid black;
+  margin-right: 1rem;
+  border-radius: 30px;
+  padding: 15px 20px;
+  text-align: left;
 }
-.footer_info .author_info:nth-child(n+2) {
-    display: none;
+.footer_info .author_info:nth-child(n + 2) {
+  display: none;
 }
 .footer_info .description {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
-.name_author, .position {
-    color: grey;
+.name_author,
+.position {
+  color: var(--title-color);
 }
 .footer_copyright {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    font-weight: 700;
+  margin-top: 1rem;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
 }
 
-/* break point  */
+/*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (min-width: 1150px) {
-    .header {
-        height: 20rem;
-        padding: 0 20px;
-        margin: 0;
-    }
-    .header_top {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .header_item {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-    .main_topics {
-        margin-top: 4rem;
-    }
-    .name_position {
-        font-size: 4rem;
-    }
-    .main_topics p {
-        color: grey;
-        color: 2rem;
-    }
+  .header {
+    height: 20rem;
+    padding: 0 20px;
+    margin: 0;
+  }
+  .header_top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header_item {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+  }
+  .main_topics {
+    margin-top: 4rem;
+  }
+  .name_position {
+    font-size: var(--biggest-font-size);
+  }
+  .main_topics p {
+    color: var(--title-color);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    height: 30rem;
+  }
+  .grid_item {
+    border: 1px solid black;
+  }
 
-    .grid {
-        display: grid;
-        grid-template-columns: 0.5fr 1fr 1fr;
-        height: 30rem;
-    }
-    .grid_item {
-        border: 1px solid black;
-    }
+  /* Project */
+  .main_container .project_part {
+    text-align: left;
+  }
 
-    /* Project */
-    .main_container .project_part {
-        text-align: left;
-    }
+  .project_part h4 {
+    border: none;
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+    padding-left: 1rem;
+  }
+  .project_list .project_item {
+    background-color: var(--first-color-light);
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 1.5rem 0;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+    padding-left: 1rem;
+  }
+  .project_list .project_item:last-of-type {
+    border: none;
+  }
+  .project_list .project_item:first-of-type {
+    margin: 0;
+  }
 
-    .project_part h4 {
-        border: none;
-        font-size: 1.5rem;
-        font-weight: 700;
-        padding-left: 1rem;
-    }
-    .project_list .project_item {
-        background-color: white;
-        border: none;
-        border-bottom: 1px solid black;
-        padding: 1.5rem 0;
-        font-size: 1rem;
-        font-weight: 500;
-        padding-left: 1rem;
+  /* Work experience */
+  .work_part .work_title {
+    border: none;
+    text-align: left;
+  }
+  .work_part .work_top {
+    padding: 10px 10px;
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    text-align: left;
+    margin-bottom: 5rem;
+    background-color: var(--first-color-light);
+  }
+  .work_top p {
+    font-size: var(--h1-font-size);
+  }
+  .work_top p:last-of-type {
+    margin-bottom: 1rem;
+  }
+  .work_top a {
+    margin-top: 2rem;
+    text-decoration: none;
+  }
+  .work_bottom {
+    background-color: var(--first-color-light);
+  }
+  .work_bottom h4 {
+    font-size: var(--h1-font-size);
+    margin-bottom: 1rem;
+  }
+  .work_bottom p {
+    font-size: var(--h1-font-size);
+    margin-bottom: 1rem;
+  }
 
-    }
-    .project_list .project_item:last-of-type {
-        border: none;
-    }
-    .project_list .project_item:first-of-type {
-        margin: 0;
-    }
+  /* Education */
+  .education_part h4 {
+    text-align: start;
+    font-size: var(--big-font-size);
+  }
+  .education_part p {
+    text-align: start;
+    font-size: var(--h1-font-size);
+  }
+  .education_part p:last-of-type {
+    margin-bottom: 1rem;
+  }
+  .course_items {
+    font-size: var(--h3-font-size);
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 2rem;
+  }
 
-    /* Work experience */
-    .work_part .work_title {
-        border: none;
-        text-align: left;
-    }
-    .work_part .work_top {
-        padding: 10px 10px;
-        font-size: 1rem;
-        color: black;
-        text-align: left;
-        margin-bottom: 5rem;
-        background-color: white;
-    }
-    .work_top p {
-        font-size: 1.5rem;
-    }
-    .work_top p:last-of-type {
-        margin-bottom: 1rem;
-
-    }
-    .work_top a {
-        margin-top: 2rem;
-        text-decoration: none;
-    }
-    .work_bottom {
-        background-color: white;
-    }
-    .work_bottom h4 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    .work_bottom p {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    /* Education */
-    .education_part h4 {
-        text-align: start;
-        font-size: 2rem;
-    }
-    .education_part p {
-        text-align: start;
-        font-size: 1.5rem;
-    }
-    .education_part p:last-of-type {
-        margin-bottom: 1rem;
-    }
-    .course_items {
-        font-size: 1rem;
-        height: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around; 
-        margin-left: 2rem;
-    }
-
-    .footer_container {
-        text-align: left;
-        margin-bottom: 20rem;
-        border: none;
-    }
-    .footer_title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        padding: 2rem 1rem;
-        margin-left: 10rem;
-    }
-    .footer_info .author_info {
-        width: 20%;
-        margin-right: 30px;
-    }
-    .footer_info .author_info:nth-child(n+2) {
-        display: block;
-    } 
-    .footer_copyright {
-        text-align: center;
-        margin-top: 10rem;
-    }
-
+  .footer_container {
+    text-align: left;
+    margin-bottom: 20rem;
+    border: none;
+  }
+  .footer_title {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+    padding: 2rem 1rem;
+    margin-left: 10rem;
+  }
+  .footer_info .author_info {
+    width: 20%;
+    margin-right: 30px;
+  }
+  .footer_info .author_info:nth-child(n + 2) {
+    display: block;
+  }
+  .footer_copyright {
+    text-align: center;
+    margin-top: 10rem;
+  }
 }

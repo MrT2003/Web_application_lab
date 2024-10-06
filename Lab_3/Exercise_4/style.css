@@ -1,129 +1,184 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 
+:root {
+  /*========== Colors ==========*/
+  --hue: 230;
+  --first-color: hsl(var(--hue), 55%, 55%);
+  --first-color-light: hsl(var(--hue), 55%, 65%);
+  --first-color-alt: hsl(var(--hue), 50%, 50%);
+  --title-color: hsl(var(--hue), 30%, 95%);
+  --text-color: hsl(var(--hue), 20%, 80%);
+  --text-color-light: hsl(var(--hue), 20%, 70%);
+  --body-color: hsl(var(--hue), 40%, 16%);
+  --container-color: hsl(var(--hue), 40%, 20%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Caveat", cursive;
+  --biggest-font-size: 4rem;
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    font-family: "Caveat", cursive;
-    height: 100vh;
-    width: 100vw;
+html {
+  scroll-behavior: smooth;
 }
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body,
+h1,
+h4,
+p,
+div {
+  font-family: var(--body-font)
+}
+
+.col a {
+  text-decoration: none;
+}
+
+/*=============== HEADER===============*/
 .header {
-    height: 50%;
+  height: 50%;
 }
 .header .row {
-    width: 100%;
-    min-height: 25rem;
+  width: 100%;
+  min-height: 25rem;
 }
 .header .header_items {
-    list-style-type: none;
+  list-style-type: none;
 }
 .header_top {
-    order: 1;
+  order: 1;
 }
 .header_bottom {
-    order: 2;
+  order: 2;
 }
 .collapse .nav-item {
-    list-style-type: none;
+  list-style-type: none;
 }
 .navbar-nav li {
-    list-style-type: square;
-    margin-left: 50px;
+  list-style-type: square;
+  margin-left: 50px;
 }
+
+/*=============== MAIN ===============*/
+.project_list li {
+  list-style-type: none;
+}
+
+/*=============== FOOTER ===============*/
 .author_info {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 .footer_copyright {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
-.project_list li {
-    list-style-type: none;
-}
-.col a {
-    text-decoration: none;
-}
-/* .main_topics {
-    padding-top: 14rem;
-} */
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
 @media (max-width: 600px) {
-    body {
-        width: 100vw;
-    }
-    /* Header */
-    .header .row {
-        min-height: 0;
-    }
-    .header {
-        text-align: center;
-        max-height: 20rem;
-    }
-    .header .logo_name {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+  body {
+    width: 100vw;
+  }
 
-    }
-    .header_items {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-    }
-    .header .logo_name span {
-        display: block;
-    }
-    .header ul li {
-        list-style-type: none;
-    }
-    .header_top {
-        order: 2;
-    }
-    .header_bottom {
-        order: 1;
-        margin: 0;
-        padding-left: 2rem;
-        width: 100%;
-    }
+  /*=============== HEADER===============*/
+  .header .row {
+    min-height: 0;
+  }
+  .header {
+    text-align: center;
+    max-height: 20rem;
+  }
+  .header .logo_name {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header_items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .header .logo_name span {
+    display: block;
+  }
+  .header ul li {
+    list-style-type: none;
+  }
+  .header_top {
+    order: 2;
+  }
+  .header_bottom {
+    order: 1;
+    margin: 0;
+    padding-left: 2rem;
+    width: 100%;
+  }
 
+  /*=============== MAIN ===============*/
+  /* project */
+  .project_list,
+  .project_title {
+    text-align: center;
+  }
+  .project_title {
+    padding-bottom: 1rem;
+  }
+  .project_item {
+    background-color: #e9ecef;
+  }
+  .project_item:first-of-type {
+    border-top: 1px solid black;
+  }
 
-    /* Project */
-    .project_list, .project_title {
-        text-align: center;
-    }
-    .project_title {
-        padding-bottom: 1rem;
-    }
-    .project_item {
-        background-color: #e9ecef;
-    }
-    .project_item:first-of-type {
-        border-top: 1px solid black;
-    }
+  /* Experience */
+  .work_title {
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 1.5rem;
+  }
+  .work_top {
+    margin: 0;
+    padding-top: 1rem;
+  }
+  .work_bottom {
+    padding-bottom: 1rem;
+  }
+  .work_top,
+  .work_bottom {
+    background-color: #e9ecef;
+  }
 
-    /* Experience */
-    .work_title {
-        text-align: center;
-        border-bottom: 1px solid black;
-        padding-bottom: 1.5rem;
-    }
-    .work_top {
-        margin: 0;
-        padding-top: 1rem;
-    }
-    .work_bottom {
-        padding-bottom: 1rem;
-    }
-    .work_top, .work_bottom {
-        background-color: #e9ecef;
-    }
-
-    /* Footer */
-    .author_info:nth-child(n+2) {
-        display: none;
-    }
+  /*=============== FOOTER ===============*/
+  .author_info:nth-child(n + 2) {
+    display: none;
+  }
 }
-
