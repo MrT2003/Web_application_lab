@@ -3,112 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadratic Equation Solver</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        input {
-            display: block;
-            margin: 10px 0;
-            padding: 8px;
-            width: 100%;
-            font-size: 16px;
-        }
-        button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 18px;
-            color: blue;
-        }
-        .error {
-            color: red;
-        }
-    </style>
+    <title>Create Email Account</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Quadratic Equation Solver</h2>
-        <form id="equation-form">
-            <label for="a">Enter a (integer):</label>
-            <input type="text" id="a" placeholder="Enter value for a" required>
-            
-            <label for="b">Enter b (integer):</label>
-            <input type="text" id="b" placeholder="Enter value for b" required>
-            
-            <label for="c">Enter c (integer):</label>
-            <input type="text" id="c" placeholder="Enter value for c" required>
+    <h2>Create your Email Account</h2>
+    <form id="emailForm">
+        <label for="birthday">Birthday:</label>
+        <select id="day">
+            <option value="">Day</option>
+            <script>
+                
+                for (let i = 1; i <= 31; i++) {
+                    document.writeln("<option value ='" + i + "'>" + i + "</option>")
+                }
+            </script>
+        </select>
+        <select id="month"></select>
+        <select id="year"></select>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
 
-            <button type="button" onclick="solveEquation()">Compute</button>
-        </form>
-        
-        <div class="result" id="result"></div>
-        <div class="error" id="error"></div>
-    </div>
+    <!-- <script>
+        const daySelect = document.getElementById('day');
+        const monthSelect = document.getElementById('month');
+        const yearSelect = document.getElementById('year');
 
-    <script>
-        function isInteger(value) {
-            return /^-?\d+$/.test(value);
+        // Populate day (1-31), month (1-12), and year (2020-2024) in one loop
+        for (let i = 1; i <= 31; i++) {
+            daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+            if (i <= 12) monthSelect.innerHTML += `<option value="${i}">${i}</option>`;
+        }
+        for (let i = 2020; i <= 2024; i++) {
+            yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
         }
 
-        function solveEquation() {
-            const a = document.getElementById("a").value;
-            const b = document.getElementById("b").value;
-            const c = document.getElementById("c").value;
-
-            const resultDiv = document.getElementById("result");
-            const errorDiv = document.getElementById("error");
-
-            resultDiv.textContent = "";
-            errorDiv.textContent = "";
-
-            // Input validation: check if a, b, c are integers
-            if (!isInteger(a) || !isInteger(b) || !isInteger(c)) {
-                errorDiv.textContent = "Please enter valid integers for a, b, and c.";
-                return;
-            }
-
-            const aInt = parseInt(a);
-            const bInt = parseInt(b);
-            const cInt = parseInt(c);
-
-            // Check if a is zero, because if a=0, it's not a quadratic equation
-            if (aInt === 0) {
-                errorDiv.textContent = "a cannot be 0 in a quadratic equation.";
-                return;
-            }
-
-            // Compute the discriminant
-            const discriminant = bInt * bInt - 4 * aInt * cInt;
-
-            // Check the discriminant to find the nature of the roots
-            if (discriminant > 0) {
-                const root1 = (-bInt + Math.sqrt(discriminant)) / (2 * aInt);
-                const root2 = (-bInt - Math.sqrt(discriminant)) / (2 * aInt);
-                resultDiv.textContent = `Two real roots: x1 = ${root1}, x2 = ${root2}`;
-            } else if (discriminant === 0) {
-                const root = -bInt / (2 * aInt);
-                resultDiv.textContent = `One real root: x = ${root}`;
-            } else {
-                resultDiv.textContent = "No real roots, the discriminant is negative.";
-            }
+        for (let i = 1; i <= 31; i++) {
+            daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+            if (i <= 12) monthSelect.innerHTML += `<option value="${i}">${i}</option>`;
         }
-    </script>
+        for (let i = 2020; i <= 2024; i++) {
+            yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
+        }
+    </script> -->
 </body>
 </html>

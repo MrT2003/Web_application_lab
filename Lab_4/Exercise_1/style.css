@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+}
+
+.register_container {
+    border: 1px solid black;
+    width: 40%;
+    height: 40rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 30px;
+}
+.announce_container {
+    padding: 1rem 2rem;
+    margin: 2rem auto;
+    border-radius: 20px;
+    border: 1px solid red;
+    margin-bottom: 3rem;
+}
+.announce_container ul li {
+    color: red;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table th {
+    text-align: right;
+}
+
+.text {
+    margin-left: 2rem; 
+    width: 50%;
+}
+.selection {
+    margin-left: 2rem; 
+    width: 50%;
+}
+.radio_choose {
+    padding-left: 2rem; 
+}
+.choose {
+    margin-right: 2rem;
+}
+.choose input {
+    margin-right: 0.5rem;
+}
+.terms {
+    padding-left: 2rem; 
+}
+.terms input {
+    margin-right: 0.5rem;
+}
+
+span {
+    color: red;
+}
