@@ -34,31 +34,6 @@ form {
 table th {
     text-align: right;
 }
-
-.text {
-    margin-left: 2rem; 
-    width: 50%;
-}
-.selection {
-    margin-left: 2rem; 
-    width: 50%;
-}
-.radio_choose {
-    padding-left: 2rem; 
-}
-.choose {
-    margin-right: 2rem;
-}
-.choose input {
-    margin-right: 0.5rem;
-}
-.terms {
-    padding-left: 2rem; 
-}
-.terms input {
-    margin-right: 0.5rem;
-}
-
 span {
     color: red;
 }

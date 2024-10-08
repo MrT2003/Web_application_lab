@@ -3,48 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Email Account</title>
+    <title>My Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #clock {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            background-color: #f8f8f8;
+        }
+        h1 {
+            color: cornflowerblue;
+            font-size: 36px;
+            margin: 0;
+        }
+        #time {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        #date {
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Create your Email Account</h2>
-    <form id="emailForm">
-        <label for="birthday">Birthday:</label>
-        <select id="day">
-            <option value="">Day</option>
-            <script>
-                
-                for (let i = 1; i <= 31; i++) {
-                    document.writeln("<option value ='" + i + "'>" + i + "</option>")
-                }
-            </script>
-        </select>
-        <select id="month"></select>
-        <select id="year"></select>
-        <br><br>
-        <button type="submit">Submit</button>
-    </form>
+    <h3>Question 3 (40 pts): Create a clock using display current date and time</h3>
+    <div id="clock">
+        <h1>My Clock</h1>
+        <div id="time"></div>
+        <div id="date"></div>
+    </div>
 
-    <!-- <script>
-        const daySelect = document.getElementById('day');
-        const monthSelect = document.getElementById('month');
-        const yearSelect = document.getElementById('year');
+    <script>
+        function updateClock() {
+            // get current day
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
 
-        // Populate day (1-31), month (1-12), and year (2020-2024) in one loop
-        for (let i = 1; i <= 31; i++) {
-            daySelect.innerHTML += `<option value="${i}">${i}</option>`;
-            if (i <= 12) monthSelect.innerHTML += `<option value="${i}">${i}</option>`;
-        }
-        for (let i = 2020; i <= 2024; i++) {
-            yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // if hour is 0, set to 12
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            seconds = seconds < 10 ? '0'+seconds : seconds;
+
+            var timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+
+            // get day
+            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var day = days[now.getDay()];
+            var month = months[now.getMonth()];
+            var dayOfMonth = now.getDate();
+            var year = now.getFullYear();
+
+            var dateString = day + ' ' + month + ' ' + dayOfMonth + ' ' + year;
+
+            document.getElementById('time').innerHTML = timeString;
+            document.getElementById('date').innerHTML = dateString;
         }
 
-        for (let i = 1; i <= 31; i++) {
-            daySelect.innerHTML += `<option value="${i}">${i}</option>`;
-            if (i <= 12) monthSelect.innerHTML += `<option value="${i}">${i}</option>`;
-        }
-        for (let i = 2020; i <= 2024; i++) {
-            yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
-        }
-    </script> -->
+        setInterval(updateClock, 1000); // Update the clock every second
+        updateClock(); // Initial call to display the clock immediately
+    </script>
 </body>
 </html>
