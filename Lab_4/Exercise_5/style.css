@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: bisque;
+}
+
+.content_container {
+    width: 40%;
+    height: 50%;
+    border: 2px solid red;
+    border-radius: 6px;
+
+    margin: 100px auto;
+    padding: 1rem 2rem;
+}
+.content_container .title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+form {
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+    padding: 5px 0;
+    font-size: 22px;
+}
+
+.todos {
+    margin-right: 2.5rem;
+}
+.todos li {
+    display: flex;
+    justify-content: space-between;
+}
+.todos li.completed {
+    color: #aaa;
+}
+.todos li.completed span {
+    text-decoration: line-through;
+}
