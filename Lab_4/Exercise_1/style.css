@@ -37,3 +37,8 @@ table th {
 span {
     color: red;
 }
+
+#email_enter, #phone_enter, #country_enter, #agree_enter {
+    display: none;
+}
+

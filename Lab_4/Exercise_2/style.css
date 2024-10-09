@@ -6,3 +6,7 @@
 .Question {
     width: 35%;
 }
+
+#time_container, #table, #submit_container {
+    display: none;
+}

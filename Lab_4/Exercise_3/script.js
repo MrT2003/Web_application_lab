@@ -7,12 +7,24 @@ function runTime() {
     // handle
     var ampm = hours <= 12 ? "AM" : "PM"
     hours = hours % 12;
-    hours = hours ? 0 : hours;
-    minutes = minutes < 60 ? 0 : minutes;
-    seconds = seconds < 60 ? 0 : seconds;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? "0"+minutes : minutes;
+    seconds = seconds < 10 ? "0"+seconds : seconds;
 
-    timeString = hours +":"+ minutes +":"+ seconds +" "+ ampm;
+    var timeString = hours+":"+minutes+":"+seconds +" "+ampm;
 
-    document.getElementById("time") = timeString;
-    document.getElementById("date") = dateString;
+    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var day = days[time.getDay()];
+    var month = months[time.getMonth()];
+    var dateOfMonth = time.getDate();
+    var year = time.getFullYear();
+
+    var dayString = day+" "+month+" "+dateOfMonth+" "+year; 
+
+    document.getElementById("time").innerHTML = timeString;
+    document.getElementById("date").innerHTML = dayString;
 }
+
+setInterval(runTime, 1000);
+runTime();

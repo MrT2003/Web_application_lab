@@ -3,75 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Clock</title>
+    <title>Countdown Timer with Questions</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
-        #clock {
-            display: inline-block;
-            padding: 20px;
-            border: 2px solid black;
-            border-radius: 15px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-            background-color: #f8f8f8;
+
+        #timerSection, #questionsSection, #submitSection {
+            display: none;
         }
-        h1 {
-            color: cornflowerblue;
-            font-size: 36px;
-            margin: 0;
+
+        #timerDisplay {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
-        #time {
-            font-size: 24px;
-            margin: 10px 0;
+
+        #submitSection {
+            display: none;
         }
-        #date {
-            font-size: 20px;
+
+        input[type="text"] {
+            width: 50px;
         }
     </style>
 </head>
 <body>
-    <h3>Question 3 (40 pts): Create a clock using display current date and time</h3>
-    <div id="clock">
-        <h1>My Clock</h1>
-        <div id="time"></div>
-        <div id="date"></div>
+    <h3>Question 2: Implement countdown and display questions</h3>
+
+    <div id="startSection">
+        <button id="startButton">Start counting down 1:00 [mm:ss]</button>
+    </div>
+
+    <div id="timerSection">
+        <div id="timerDisplay">The remaining time: 1:00 [mm:ss]</div>
+    </div>
+
+    <div id="questionsSection">
+        <h4>These are test questions.</h4>
+        <p>Question 1: How many people are there in your class? <input type="text"></p>
+        <p>Question 2: How do you feel now?
+            <label><input type="radio" name="feel" value="good"> Good</label>
+            <label><input type="radio" name="feel" value="bad"> Bad</label>
+        </p>
+    </div>
+
+    <div id="submitSection">
+        <h4>Time is up!!!</h4>
+        <button id="submitButton">Submit your answers</button>
     </div>
 
     <script>
-        function updateClock() {
-            // get current day
-            var now = new Date();
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var seconds = now.getSeconds();
+        let countdown;
+        let remainingTime = 60; // 60 seconds countdown
 
-            var ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12; // if hour is 0, set to 12
-            minutes = minutes < 10 ? '0'+minutes : minutes;
-            seconds = seconds < 10 ? '0'+seconds : seconds;
+        const startButton = document.getElementById('startButton');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const timerSection = document.getElementById('timerSection');
+        const questionsSection = document.getElementById('questionsSection');
+        const submitSection = document.getElementById('submitSection');
+        const startSection = document.getElementById('startSection');
 
-            var timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
-
-            // get day
-            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            var day = days[now.getDay()];
-            var month = months[now.getMonth()];
-            var dayOfMonth = now.getDate();
-            var year = now.getFullYear();
-
-            var dateString = day + ' ' + month + ' ' + dayOfMonth + ' ' + year;
-
-            document.getElementById('time').innerHTML = timeString;
-            document.getElementById('date').innerHTML = dateString;
+        // Function to format time into mm:ss
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes}:${secs < 10 ? '0' + secs : secs}`;
         }
 
-        setInterval(updateClock, 1000); // Update the clock every second
-        updateClock(); // Initial call to display the clock immediately
+        // Function to start countdown
+        function startCountdown() {
+            startSection.style.display = 'none'; // Hide the start button
+            timerSection.style.display = 'block'; // Show the timer section
+            questionsSection.style.display = 'block'; // Show the questions
+            timerDisplay.textContent = `The remaining time: ${formatTime(remainingTime)} [mm:ss]`;
+
+            countdown = setInterval(function() {
+                remainingTime--;
+                timerDisplay.textContent = `The remaining time: ${formatTime(remainingTime)} [mm:ss]`;
+
+                if (remainingTime <= 0) {
+                    clearInterval(countdown); // Stop the timer
+                    timerSection.style.display = 'none'; // Hide timer
+                    questionsSection.style.display = 'none'; // Hide questions
+                    submitSection.style.display = 'block'; // Show submit section
+                }
+            }, 1000);
+        }
+
+        // Start button event listener
+        startButton.addEventListener('click', startCountdown);
     </script>
 </body>
 </html>
