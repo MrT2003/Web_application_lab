@@ -7,7 +7,7 @@ textarea.addEventListener("input", function () {
   charCount.textContent = currentLength;
 
   if (currentLength >= maxChars) {
-    textarea.classList.add("limit-reached"); // Add the class here
+    textarea.classList.add("limit-reached");
     charCount.classList.add("count_number");
   } else {
     textarea.classList.remove("limit-reached");
