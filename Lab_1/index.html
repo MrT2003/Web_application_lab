@@ -1,99 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer with Questions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Information</title>
 
-        #timerSection, #questionsSection, #submitSection {
-            display: none;
-        }
-
-        #timerDisplay {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        #submitSection {
-            display: none;
-        }
-
-        input[type="text"] {
-            width: 50px;
-        }
-    </style>
-</head>
-<body>
-    <h3>Question 2: Implement countdown and display questions</h3>
-
-    <div id="startSection">
-        <button id="startButton">Start counting down 1:00 [mm:ss]</button>
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Personal Information</h1>
+      <form action="">
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control border-dark"
+              id="inputPassword"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >Name</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control border-dark"
+              id="inputPassword"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control border-dark"
+              id="inputPassword"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label"
+            >Gender</label
+          >
+          <div class="col-sm-10">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineRadio2">Female</label>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Major</label>
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control border-dark"
+              id="inputPassword"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label"
+            >Interesting Field</label
+          >
+          <div class="col-sm-10">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="floatingTextarea2"
+              style="height: 100px"
+            ></textarea>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary">Insert</button>
+        <button type="button" class="btn btn-outline-secondary">Cancel</button>
+      </form>
     </div>
 
-    <div id="timerSection">
-        <div id="timerDisplay">The remaining time: 1:00 [mm:ss]</div>
-    </div>
-
-    <div id="questionsSection">
-        <h4>These are test questions.</h4>
-        <p>Question 1: How many people are there in your class? <input type="text"></p>
-        <p>Question 2: How do you feel now?
-            <label><input type="radio" name="feel" value="good"> Good</label>
-            <label><input type="radio" name="feel" value="bad"> Bad</label>
-        </p>
-    </div>
-
-    <div id="submitSection">
-        <h4>Time is up!!!</h4>
-        <button id="submitButton">Submit your answers</button>
-    </div>
-
-    <script>
-        let countdown;
-        let remainingTime = 60; // 60 seconds countdown
-
-        const startButton = document.getElementById('startButton');
-        const timerDisplay = document.getElementById('timerDisplay');
-        const timerSection = document.getElementById('timerSection');
-        const questionsSection = document.getElementById('questionsSection');
-        const submitSection = document.getElementById('submitSection');
-        const startSection = document.getElementById('startSection');
-
-        // Function to format time into mm:ss
-        function formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${minutes}:${secs < 10 ? '0' + secs : secs}`;
-        }
-
-        // Function to start countdown
-        function startCountdown() {
-            startSection.style.display = 'none'; // Hide the start button
-            timerSection.style.display = 'block'; // Show the timer section
-            questionsSection.style.display = 'block'; // Show the questions
-            timerDisplay.textContent = `The remaining time: ${formatTime(remainingTime)} [mm:ss]`;
-
-            countdown = setInterval(function() {
-                remainingTime--;
-                timerDisplay.textContent = `The remaining time: ${formatTime(remainingTime)} [mm:ss]`;
-
-                if (remainingTime <= 0) {
-                    clearInterval(countdown); // Stop the timer
-                    timerSection.style.display = 'none'; // Hide timer
-                    questionsSection.style.display = 'none'; // Hide questions
-                    submitSection.style.display = 'block'; // Show submit section
-                }
-            }, 1000);
-        }
-
-        // Start button event listener
-        startButton.addEventListener('click', startCountdown);
-    </script>
-</body>
+    <!-- bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
