@@ -29,6 +29,9 @@ public class RegisterServlet extends HttpServlet {
         if (subjects == null) {
             subjects = new String[]{}; // Gán mảng rỗng nếu không có checkbox nào được chọn
         }
+        for (String subject : subjects) {
+            System.out.println(subject); // In ra console để kiểm tra
+        }
         String comment = request.getParameter("comment");
 
         // Tạo đối tượng chứa dữ liệu
