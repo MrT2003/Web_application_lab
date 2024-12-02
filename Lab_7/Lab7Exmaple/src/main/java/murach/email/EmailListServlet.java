@@ -5,8 +5,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.*;
 import java.util.List;
+import murach.business.Customer;
 
 import murach.business.User;
+import murach.data.CustomerDB;
 import murach.data.UserDB;
 
 @WebServlet(name = "EmailList", urlPatterns = {"/emailList]"})
@@ -30,16 +32,16 @@ public class EmailListServlet extends HttpServlet {
             url = "/index.html";    // the "join" page
         } else if (action.equals("add")) {
             // get parameters from the request
-            String firstName = request.getParameter("firstName");
-            String lastName = request.getParameter("lastName");
-            String email = request.getParameter("email");
+            String name = request.getParameter("name");
+            String visaNumber = request.getParameter("visaNumber");
+            String address = request.getParameter("address");
 
             // store data in User object and save User object in database
-            User user = new User(firstName, lastName, email);
-            UserDB.insert(user);
+           Customer customer = new Customer(name, visaNumber, address);
+            CustomerDB.insert(customer);
 
             // set User object in request object and set URL
-            request.setAttribute("user", user);
+            request.setAttribute("user", customer);
             url = "/thanks.jsp";   // the "thanks" page
         }
 

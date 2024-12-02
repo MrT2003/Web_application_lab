@@ -1,3 +1,7 @@
-murach\business\User.class
+murach\data\CustomerDB.class
 murach\email\EmailListServlet.class
+Model\Products.class
+murach\business\Customer.class
+murach\business\User.class
+murach\email\ShoppingList.class
 murach\data\UserDB.class
