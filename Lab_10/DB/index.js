@@ -11,13 +11,15 @@ const pool = createPool({
   port: process.env.MYSQL_PORT,
 });
 
-export const connectToDatabase = async () => {
+const connectToDB = async () => {
   try {
-    const connection = await pool.getConnection();
-    console.log('MySQL Connection Successful');
-    connection.release(); // Giải phóng kết nối sau khi sử dụng
+      await pool.getConnection();
+      console.log("MySQL connection successful!");
   } catch (error) {
-    console.error('Database Connection Error:', error.message);
-    throw error;
+      console.error("Database connection error!");
+      console.error(error.message);
+      throw error;
   }
 };
+
+export { connectToDB, pool };
